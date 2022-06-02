@@ -5,17 +5,35 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="font-awesome.min.css">
 </head>
+
+<style type="text/css">
+  button {
+    border-style: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0)
+  }
+  i.fa {
+    color:white;
+  }
+  div.background-color {
+    background-color: black;
+  }
+  div.video_resolution {
+    width: 800px;
+    height: 600px;
+  }
+  div.js-video-container {
+    width: 100%;
+    height: 100%
+  }
+</style>
+
 <body>
-  <div id="player" style="width: 800px; height: 600px;">
-
-    <div class="js-video-container" style="width: 100%; height: 100%"></div>
-
-    <div>
-      <div style="background-color: brown;" >
-          <button class="js-play-button" style="border-style: none; cursor: pointer; background: rgba(0, 0, 0, 0);"><i class="fa fa-play" style="color:white;" aria-hidden="true" ></i></button>
-          <button class="js-pause-button" style="border-style: none; cursor: pointer; background: rgba(0, 0, 0, 0);"><i class="fa fa-stop" style="color:white;" aria-hidden="true" ></i></button>
-
-      </div>
+  <div id="player" class="video_resolution">
+    <div class="js-video-container"></div>
+    <div class="background-color">
+      <button class="js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
+      <button class="js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
     </div>
   </div>
 
