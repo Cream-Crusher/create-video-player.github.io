@@ -12,25 +12,30 @@
     cursor: pointer;
     background: rgba(0, 0, 0, 0)
   }
-  i.fa {
+  .fa {
     flex-grow: 1;
     color:white;
     font-size: large;
   }
-  div.background-color {
+  .background-color {
     background-color: black;
     display: flex;
     flex-direction: row;
   }
-  div.video_resolution {
+  .video_resolution {
     display: flex;
     flex-direction: column;
     width: 800px;
     height: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
-  div.js-video-container {
+  .js-video-container {
     flex-grow: 1;
+  }
+  .flex-end-container {
+  display: flex;
+  Justify-content: flex-end;
+  width: 100%;
   }
 </style>
 
@@ -44,7 +49,10 @@
         <div style="width: 15px;"></div>
       <button class="js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
       <button class="js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
- 
+      <div class="flex-end-container">
+        <button class="js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
+      </div>
+
     </div>
   </div>
 
