@@ -5,31 +5,33 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="font-awesome.min.css">
 </head>
-
+<link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
 <style type="text/css">
-  button {
-    border-style: none;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0)
-  }
-  .fa {
+  .button-icon {
     flex-grow: 1;
     color:white;
     font-size: large;
   }
-  .background-color {
-    background-color: black;
+  .button-area {
+    border-style: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    width: 36px;
+    height: 36px;
+  }
+  .background-color-player {
+    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: row;
   }
-  .video_resolution {
+  .video-resolution {
     display: flex;
     flex-direction: column;
     width: 800px;
     height: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
-  .js-video-container {
+  .video-container {
     flex-grow: 1;
   }
   .flex-end-container {
@@ -40,22 +42,21 @@
 </style>
 
 <body>
-  <div id="player" class="video_resolution">
-    <div class="js-video-container"></div>
-    <div class="background-color">
+  <div id="player" class="video-resolution">
+    <div class="video-container js-video-container"></div>
+    <div class="background-color-player">
 
-      <button class="js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
-      <button class="js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
+      <button class="button-area js-play-button"><i class="button-icon fa fa-play" aria-hidden="true" ></i></button>
+      <button class="button-area js-pause-button"><i class="button-icon fa fa-stop" aria-hidden="true" ></i></button>
         <div style="width: 15px;"></div>
-      <button class="js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
-      <button class="js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
+      <button class="button-area js-mute-button"><i class="button-icon fa fa-volume-up" aria-hidden="true" ></i></button>
+      <button class="button-area js-volume-button"><i class="button-icon fa fa-volume-off" aria-hidden="true" ></i></button>
       <div class="flex-end-container">
-        <button class="js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
+        <button class="button-area js-fullscreen-button"><i class="button-icon fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
 
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
