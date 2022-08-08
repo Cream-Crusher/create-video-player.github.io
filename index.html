@@ -7,11 +7,6 @@
 </head>
 <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
 <style type="text/css">
-  .button-icon {
-    flex-grow: 1;
-    color:white;
-    font-size: large;
-  }
   .button-area {
     border-style: none;
     cursor: pointer;
@@ -35,9 +30,13 @@
     flex-grow: 1;
   }
   .flex-end-container {
+  flex-grow: 1;
   display: flex;
   Justify-content: flex-end;
-  width: 100%;
+  }
+  .fa {
+    color:white;
+    font-size: large;
   }
 </style>
 
@@ -46,13 +45,12 @@
     <div class="video-container js-video-container"></div>
     <div class="background-color-player">
 
-      <button class="button-area js-play-button"><i class="button-icon fa fa-play" aria-hidden="true" ></i></button>
-      <button class="button-area js-pause-button"><i class="button-icon fa fa-stop" aria-hidden="true" ></i></button>
-        <div style="width: 15px;"></div>
-      <button class="button-area js-mute-button"><i class="button-icon fa fa-volume-up" aria-hidden="true" ></i></button>
-      <button class="button-area js-volume-button"><i class="button-icon fa fa-volume-off" aria-hidden="true" ></i></button>
+      <button class="button-area js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
+      <button class="button-area js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
+      <button class="button-area js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
+      <button class="button-area js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
       <div class="flex-end-container">
-        <button class="button-area js-fullscreen-button"><i class="button-icon fa fa-solid fa-expand" aria-hidden="true" ></i></button>
+        <button class="button-area js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
 
     </div>
