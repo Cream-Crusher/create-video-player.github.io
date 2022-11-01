@@ -40,18 +40,38 @@
   display: flex;
   Justify-content: flex-end;
   }
-
+  .timer-visual {
+    border-style: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    color:white;
+    font-size: large;
+  }
 </style>
 
 <body>
   <div id="player" class="video-resolution">
     <div class="video-container js-video-container"></div>
-    <div class="background-color-player">
 
+      <!-- 
+      <div class="js-progress" style="background-color: grey;">
+        <div class="js-progress-slider" style="background-color: red;">Прогресс</div>
+      </div>
+    -->
+
+
+
+    <div class="background-color-player">
       <button class="button-area js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
       <button class="button-area js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
       <button class="button-area js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
       <button class="button-area js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
+      
+
+      <button class="timer-visual js-current-time"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
+      <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
+
+
       <div class="flex-end-container">
         <button class="button-area js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
@@ -62,6 +82,11 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
+
+
+
+  
+
 
   <script type="text/javascript">
     createPlayer({
