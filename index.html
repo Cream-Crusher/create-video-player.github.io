@@ -6,8 +6,13 @@
   <link rel="stylesheet" href="font-awesome.min.css">
 </head>
 <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+
 <style type="text/css">
   .button-area {
+    font-family: 'Roboto', sans-serif;
     border-style: none;
     cursor: pointer;
     background: rgba(0, 0, 0, 0);
@@ -19,6 +24,15 @@
     margin-right: 1px;
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+  .timer-visual {
+    font-family: 'Roboto', sans-serif;
+    border-style: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    color:white;
+    font-size: large;
+
   }
   .background-color-player {
     background-color: rgb(0, 0, 0);
@@ -40,39 +54,48 @@
   display: flex;
   Justify-content: flex-end;
   }
-  .timer-visual {
-    border-style: none;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0);
-    color:white;
-    font-size: large;
+  .progress-bar {
+    background-color: red;
+    height: 8px;
+    margin: 5px;
+    border-radius: 8px;
   }
+  .background-progress-bar {
+    flex-grow: 1;
+    margin: 5px;
+    border-radius: 10px;
+    display: flex
+  }
+  .dot {
+  height: 8px;
+  width: 8px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-color: rgb(255, 255, 255);
+  margin: 3px;
+}
+
 </style>
 
 <body>
   <div id="player" class="video-resolution">
     <div class="video-container js-video-container"></div>
-
-      <!-- 
-      <div class="js-progress" style="background-color: grey;">
-        <div class="js-progress-slider" style="background-color: red;">Прогресс</div>
-      </div>
-    -->
-
-
-
     <div class="background-color-player">
       <button class="button-area js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
       <button class="button-area js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
       <button class="button-area js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
       <button class="button-area js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-      
-
       <button class="timer-visual js-current-time"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-      <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-
-
       <div class="flex-end-container">
+        <div class="background-progress-bar js-progress">
+          <div class="progress-bar js-progress-slider"></div><div class="dot"></div>
+        </div>
+        <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
         <button class="button-area js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
 
