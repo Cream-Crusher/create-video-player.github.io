@@ -69,15 +69,20 @@
   .dot {
   height: 8px;
   width: 8px;
-  background-color: rgb(255, 0, 0);
+  opacity: 1; 
   border-radius: 50%;
   display: inline-block;
   border-style: solid;
   border-width: 2px;
   border-left-width: 2px;
   border-right-width: 2px;
-  border-color: rgb(255, 255, 255);
   margin: 3px;
+  transition-duration: .5s;
+}
+.animated-btn:hover  .animated-btn{
+  background-color: rgb(255, 0, 0);
+  border-color: rgb(255, 255, 255);
+  transition-duration: .5s;
 }
 
 </style>
@@ -92,8 +97,8 @@
       <button class="button-area js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
       <button class="timer-visual js-current-time"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
       <div class="flex-end-container">
-        <div class="background-progress-bar js-progress">
-          <div class="progress-bar js-progress-slider"></div><div class="dot"></div>
+        <div class="background-progress-bar animated-btn js-progress">
+          <div class="progress-bar js-progress-slider"></div><div class="dot animated-btn"></div>
         </div>
         <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
         <button class="button-area js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
