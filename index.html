@@ -33,7 +33,6 @@
     background: rgba(0, 0, 0, 0);
     color:white;
     font-size: large;
-
   }
   .background-color-player {
     background-color: rgb(0, 0, 0);
@@ -60,6 +59,7 @@
     height: 8px;
     margin: 5px;
     border-radius: 8px;
+    transition-duration: .2s;
   }
   .background-progress-bar {
     flex-grow: 1;
@@ -79,18 +79,17 @@
   border-right-width: 2px;
   margin: 3px;
   transition-duration: .5s;
-}
-.animated-btn:hover  .animated-btn{
-  background-color: rgb(255, 0, 0);
-  border-color: rgb(255, 255, 255);
-  transition-duration: .5s;
-}
-:focus {
-  outline: 0;
-}
+  margin-left: -10px;
+  }  
+  .animated-btn:hover  .animated-btn{
+    background-color: rgb(255, 0, 0);
+    border-color: rgb(255, 255, 255);
+    transition-duration: .5s;
+  }
 </style>
 
 <body>
+
   <div id="player" class="video-resolution">
     <div class="video-container js-video-container"></div>
     <div class="background-color-player">
@@ -101,24 +100,18 @@
       <button class="timer-visual js-current-time"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
       <div class="flex-end-container">
         <div class="background-progress-bar animated-btn js-progress">
-          <div class="progress-bar js-progress-slider"></div><div class="dot animated-btn"></div>
+          <div class="progress-bar js-progress-slider"></div>
+          <div class="dot animated-btn"></div>
         </div>
         <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
         <button class="button-area js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
-
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
-
-
-
-  
-
-
   <script type="text/javascript">
     createPlayer({
       elementId: 'player',
