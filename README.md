@@ -35,12 +35,6 @@ Site rebuilt
 $ start chrome http://127.0.0.1:5500
 ```
 [http://127.0.0.1:5500](http://127.0.0.1:5500)
-#### OR(Via Git-Hub)
-
-```
-$ start chrome https://ruk228.github.io/create-video-player/index.html
-```
-[https://ruk228.github.io/create-video-player/index.html](https://ruk228.github.io/create-video-player/index.html)
 
 # Project Goals
 
