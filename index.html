@@ -17,22 +17,23 @@
     border-style: none;
     cursor: pointer;
     background: rgba(0, 0, 0, 0);
-    width: 35px;
-    height:35px;
-    color:white;
-    font-size: large;
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-top: 0px;
+    width: 21px;
+    height: 35px;
+    color: white;
+    margin-left: 2px;
+    margin-right: 5px;
     margin-bottom: 0px;
+    font-size: medium;
   }
   .timer-visual {
     font-family: 'Roboto', sans-serif;
     border-style: none;
     cursor: pointer;
     background: rgba(0, 0, 0, 0);
-    color:white;
-    font-size: large;
+    color: white;
+    font-size: smaller;
+    margin-left: -3px;
+    margin-right: -6px;
   }
   .background-color-player {
     background-color: rgb(0, 0, 0);
@@ -42,9 +43,9 @@
   .video-resolution {
     display: flex;
     flex-direction: column;
-    width: 800px;
-    height: 600px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 640px;
+    height: 480px;
+    box-shadow: 0 0 15px rgb(0, 0, 0)
   }
   .video-container {
     flex-grow: 1;
@@ -56,41 +57,49 @@
   }
   .progress-bar {
     background-color: red;
-    height: 8px;
-    margin: 5px;
+    height: 4px;
+    margin: 7px;
     border-radius: 8px;
-    transition-duration: .2s;
+    transition-duration: 300ms;
   }
   .background-progress-bar {
     flex-grow: 1;
-    margin: 6px;
+    margin: 8px;
     border-radius: 10px;
     display: flex;
   }
   .dot {
-    height: 8px;
-    width: 8px;
-    opacity: 0; 
+    height: 5px;
+    width: 5px;
+    opacity: 0;
     border-radius: 50%;
     display: inline-block;
     border-style: solid;
-    border-width: 2px;
-    border-left-width: 2px;
-    border-right-width: 2px;
+    border-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
     margin: 3px;
-    transition-duration: .5s;
     margin-left: -10px;
   }  
-  .animated-btn:hover  .animated-btn{
+  .animated-btn:hover  .animated-btn {
     background-color: rgb(255, 0, 0);
     border-color: rgb(255, 255, 255);
-    transition-duration: .5s;
+    transition-duration: 300ms;
     opacity: 1;
   }
+  .content {position: absolute;
+    left:5px;
+    top:5px;
+  }
+  .fullscreen-button {
+    margin-left: 0px;
+    margin-right: 7px;
+  }
+
 </style>
 
 <body>
-
+  <div class="content">
   <div id="player" class="video-resolution">
     <div class="video-container js-video-container"></div>
       <div class="background-color-player">
@@ -104,10 +113,10 @@
           <div class="dot animated-btn"></div>
         </div>
         <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-        <button class="button-area js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
+        <button class="button-area fullscreen-button js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
     </div>
-
+  </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
