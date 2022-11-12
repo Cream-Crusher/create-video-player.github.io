@@ -42,6 +42,7 @@ $ start chrome http://127.0.0.1:5500
 $ start chrome https://ruk228.github.io/create-video-player/index.html
 ```
 [https://ruk228.github.io/create-video-player.github.io/](https://ruk228.github.io/create-video-player.github.io/)
+
 # Project Goals
 
 Training
