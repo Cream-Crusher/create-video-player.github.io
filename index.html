@@ -3,7 +3,7 @@
 <head>
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a44f68a199.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="icon" type="image/png" href="https://ruk228.github.io/create-video-player.github.io/favicon.png" sizes="16x16">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,65 +12,54 @@
 </head>
 
 <style type="text/css">
-  .button-area {
-    font-family: 'Roboto', sans-serif;
-    border-style: none;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0);
-    width: 21px;
-    height: 35px;
-    color: white;
-    margin-left: 2px;
-    margin-right: 5px;
-    margin-bottom: 0px;
-    font-size: medium;
+.video-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-btn:hover  .animated-btn {
+  background-color: rgb(255, 0, 0);
+  border-color: rgb(255, 255, 255);
+  transition-duration: 300ms;
+  opacity: 1;
+}
+
+.custom-videoPlayer {
+  position: absolute;
+  left:6px;
+  top:6px;
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+  font-family: 'Roboto', sans-serif;
   }
-  .timer-visual {
-    font-family: 'Roboto', sans-serif;
-    border-style: none;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0);
-    color: white;
-    font-size: smaller;
-    margin-left: -3px;
-    margin-right: -6px;
-  }
-  .background-color-player {
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: row;
-  }
-  .video-resolution {
+  .custom-videoPlayer__screen {
     display: flex;
     flex-direction: column;
-    width: 640px;
-    height: 480px;
-    box-shadow: 0 0 15px rgb(0, 0, 0)
+    width: 800px;
+    height: 600px;
   }
-  .video-container {
-    flex-grow: 1;
-  }
-  .flex-end-container {
-    flex-grow: 1;
+  .custom-videoPlayer__controls {
+    height: 42px;
+    background-color: rgb(0, 0, 0);
     display: flex;
-    Justify-content: flex-end;
+    justify-content: center;
   }
-  .progress-bar {
-    background-color: red;
-    height: 4px;
-    margin: 7px;
-    border-radius: 8px;
-    transition-duration: 300ms;
-  }
-  .background-progress-bar {
+  .custom-videoPlayer__progress_bar {
     flex-grow: 1;
-    margin: 8px;
     border-radius: 10px;
     display: flex;
   }
-  .dot {
-    height: 5px;
-    width: 5px;
+  .custom-videoPlayer__progress-line {
+    background-color: red;
+    height: 6px;
+    margin: 10px;
+    border-radius: 8px;
+    transition-duration: 300ms;
+  }
+  .custom-videoPlayer__progress_indicator{
+    height: 8px;
+    width: 8px;
     opacity: 0;
     border-radius: 50%;
     display: inline-block;
@@ -78,42 +67,41 @@
     border-width: 3px;
     border-left-width: 3px;
     border-right-width: 3px;
-    margin: 3px;
-    margin-left: -10px;
-  }  
-  .animated-btn:hover  .animated-btn {
-    background-color: rgb(255, 0, 0);
-    border-color: rgb(255, 255, 255);
-    transition-duration: 300ms;
-    opacity: 1;
+    margin: 5px;
   }
-  .content {position: absolute;
-    left:5px;
-    top:5px;
+  .custom-videoPlayer__button {
+    cursor: pointer;
+    border-style: none;
+    background: rgba(0, 0, 0, 0);
+    width: 37px;
+    color: white;
+    font-size: 19px;
   }
-  .fullscreen-button {
-    margin-left: 0px;
-    margin-right: 7px;
+  .custom-videoPlayer__timer {
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 16px;
   }
-
 </style>
 
 <body>
-  <div class="content">
-  <div id="player" class="video-resolution">
+  <div class="custom-videoPlayer">
+  <div id="player" class="custom-videoPlayer__screen">
     <div class="video-container js-video-container"></div>
-      <div class="background-color-player">
-      <button class="button-area js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
-      <button class="button-area js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
-      <button class="button-area js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
-      <button class="button-area js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-      <button class="timer-visual js-current-time"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-        <div class="background-progress-bar animated-btn js-progress">
-          <div class="progress-bar js-progress-slider"></div>
-          <div class="dot animated-btn"></div>
+      <div class="custom-videoPlayer__controls">
+      <button class="custom-videoPlayer__button js-play-button"><i class="fa fa-play" aria-hidden="true" ></i></button>
+      <button class="custom-videoPlayer__button js-pause-button"><i class="fa fa-stop" aria-hidden="true" ></i></button>
+      <button class="custom-videoPlayer__button js-mute-button"><i class="fa fa-volume-up" aria-hidden="true" ></i></button>
+      <button class="custom-videoPlayer__button js-volume-button"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
+      <div class="video-container">
+      <span class="custom-videoPlayer__timer js-current-time"><i class="fa fa-volume-off" aria-hidden="true" ></i></span>
+        <div class="custom-videoPlayer__progress_bar animated-btn js-progress">
+          <div class="custom-videoPlayer__progress-line js-progress-slider"></div>
+          <div class="custom-videoPlayer__progress_indicator animated-btn"></div>
         </div>
-        <button class="timer-visual js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></button>
-        <button class="button-area fullscreen-button js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
+        <span class="custom-videoPlayer__timer js-duration"><i class="fa fa-volume-off" aria-hidden="true" ></i></span>
+      </div>
+        <button class="custom-videoPlayer__button fullscreen-button js-fullscreen-button"><i class="fa fa-solid fa-expand" aria-hidden="true" ></i></button>
       </div>
     </div>
   </div>
